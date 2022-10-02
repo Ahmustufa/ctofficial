@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import Navigation from "../components/Navigation";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+import Pricing from "../components/Pricing";
 const Home = () => {
   const el = useRef(null);
   useEffect(() => {
@@ -45,6 +46,7 @@ const Home = () => {
                 </Typography> */}
               </BackgroundGrid>
             </Grid>
+            <Pricing />
           </Grid>
         </Grid>
       </Navigation>
@@ -57,5 +59,5 @@ export default Home;
 const BackgroundGrid = styled(Grid)``;
 
 const HeaderText = styled(Typography)`
-  color: #1f6103;
+  color: #2f3c68;
 `;
