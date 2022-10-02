@@ -3,7 +3,6 @@ import Loader from "./components/Loader";
 import Aboutus from "./pages/AboutUs";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 
