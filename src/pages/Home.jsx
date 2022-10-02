@@ -6,6 +6,7 @@ import Navigation from "../components/Navigation";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import Pricing from "../components/Pricing";
+import Aboutus from "./AboutUs";
 const Home = () => {
   const el = useRef(null);
   useEffect(() => {
@@ -47,6 +48,8 @@ const Home = () => {
               </BackgroundGrid>
             </Grid>
             <Pricing />
+
+            <Aboutus />
           </Grid>
         </Grid>
       </Navigation>

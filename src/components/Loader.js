@@ -9,7 +9,7 @@ const Loader = () => {
     setTimeout(() => {
       setData(<Home />);
       setDone(true);
-    }, 3000);
+    }, 300);
   }, []);
 
   return (

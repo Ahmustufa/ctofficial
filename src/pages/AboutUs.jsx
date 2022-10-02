@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Navigation from "../components/Navigation";
 
-const Aboutus = () => {
-  return (
-    <div>Aboutus</div>
-  )
-}
+const AboutUs = () => {
+  return <>Aboutus</>;
+};
 
-export default Aboutus
+export default AboutUs;

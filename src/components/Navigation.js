@@ -185,21 +185,50 @@ const useStyle = makeStyles((theme) => ({
     padding: "15px",
     textDecoration: "none",
     color: "black",
+
+    // display: "block",
+    // content: "",
+
+    // transform: "scaleX(0)",
+    transition: "border 250ms ease-in-out",
+    "&:hover": {
+      color: "#2F3C68 !important",
+      fontWeight: "bold",
+      // transform: "scaleX(1)",
+      borderBottom: "solid 3px #2F3C68",
+    },
+
+    // "&::after": {
+    //   content: "",
+    //   display: "block",
+    //   width: "0",
+    //   height: "2px",
+    //   background: "#000",
+    //   transition: "width .3s",
+    // },
+    // "&:hover::after": {
+    //   width: "100%",
+    // },
   },
   mainNav: {
     margin: "auto",
+    height: "3.5rem",
   },
   navBarbg: {
     backgroundColor: "#eeeeee",
     color: "black",
+    height: "100% !important",
   },
   navLogo: {
     textDecoration: "none",
     color: "black",
-    "& > a:hover": {
-      color: "red",
+    fontSize: "25px",
+    fontWeight: 600,
+    "&:hover": {
+      color: "black",
     },
   },
+  navLinkHover: {},
 }));
 
 function BasicExample(props) {
@@ -217,7 +246,10 @@ function BasicExample(props) {
             <Nav className={classes.mainNav}>
               {data.map((item) => {
                 return (
-                  <Link className={classes.navLinks} to={item.path}>
+                  <Link
+                    className={`${classes.navLinks} ${classes.navLinkHover}`}
+                    to={item.path}
+                  >
                     {item.title}
                   </Link>
                 );
@@ -228,7 +260,7 @@ function BasicExample(props) {
       </Navbar>
       {props.children}
     </>
-  )
+  );
 }
 
 export default BasicExample;
