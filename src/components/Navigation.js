@@ -228,7 +228,7 @@ function BasicExample(props) {
       </Navbar>
       {props.children}
     </>
-  )
+  );
 }
 
 export default BasicExample;
