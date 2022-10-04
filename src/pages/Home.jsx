@@ -47,7 +47,7 @@ const Home = () => {
                 </Typography> */}
               </BackgroundGrid>
             </Grid>
-            {/* <Pricing /> */}
+            <Pricing />
             <WhyChooseUs />
           </Grid>
         </Grid>
