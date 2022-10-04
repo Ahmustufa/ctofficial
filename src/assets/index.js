@@ -1,4 +1,16 @@
 
+export const background = [
+  {
+    image: <img src={require("./bg-demo.png")} style={{ objectFit: "cover" }} />
+  },
+  {
+    image: <img src={require("./bg-demo1.png")} style={{ objectFit: "cover" }} />
+  },
+  {
+    image: <img src={require("./bg-demo2.png")} style={{ objectFit: "cover" }} />
+  },
+]
+
 export const choose = [
   {
     title: "",
