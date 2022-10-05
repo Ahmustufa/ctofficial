@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bars } from "react-loader-spinner";
 import styled from "styled-components";
 import Home from "../pages/Home";
+
 const Loader = () => {
   const [data, setData] = useState([]);
   const [done, setDone] = useState(false);
