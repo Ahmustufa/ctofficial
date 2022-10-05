@@ -1,234 +1,154 @@
 import { Button, Grid, Typography } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Stack } from "@mui/system";
-const Pricing = () => {
+import styled from "styled-components";
+import "@fontsource/roboto/500.css";
+import CheckIcon from "@mui/icons-material/Check";
+function App() {
+  const data = [
+    {
+      title: "Starter",
+      subtitle: "Best option for personal use  & for your next project.",
+      price: 29,
+      items: [
+        "Individual configuration",
+        "No setup, or hidden fees",
+        "Team size: 1 developer",
+        "Premium support: 6 months",
+        "Free updates: 6 months",
+      ],
+    },
+    {
+      title: "Company",
+      subtitle: "Relevant for multiple users, extended & premium support.",
+      price: 99,
+      items: [
+        "Individual configuration",
+        "No setup, or hidden fees",
+        "Team size: 10 developers",
+        "Premium support: 24 months",
+        "Free updates: 24 months",
+      ],
+    },
+    {
+      title: "Enterprise",
+      subtitle: "Best for large scale uses and extended redistribution rights.",
+      price: 199,
+      items: [
+        "Individual configuration",
+        "No setup, or hidden fees",
+        "Team size: 20+ developers",
+        "Premium support: 36 months",
+        "Free updates: 36 months",
+      ],
+    },
+  ];
   return (
-    <>
-      <Grid container>
-        <Grid items xs={12}>
-          <Stack spacing={2} sx={{ my: "2rem" }}>
-            <Typography
-              variant="h2"
-              sx={{ fontWeight: "bold", textAlign: "center" }}
-            >
-              Pricing
-            </Typography>
-            <Typography variant="h4" sx={{ textAlign: "center" }}>
-              Designed for business teams like yours
-            </Typography>
-            <Typography variant="h5" sx={{ textAlign: "center" }}>
-              Here at Cyber Tech we focus on markets where technology,
-              innovation, and capital <br /> can unlock long-term value and
-              drive economic growth.
-            </Typography>
-          </Stack>
-        </Grid>
+    <ParentGrid container mb={10} pb={10}>
+      <Grid item xs={12}>
+        <Stack spacing={3} my={7}>
+          <Typography variant="h2" textAlign="center">
+            Pricing Cards
+          </Typography>
+          <Typography variant="h5" textAlign="center">
+            Best option for personal use & for your next project.
+          </Typography>
+        </Stack>
+        <Row
+          container
+          gap={{ lg: 5, md: 3, sm: 2 }}
+          columns={{ md: 7, lg: 10, sm: 6, xs: 3, xl: 12 }}
+        >
+          {data.map((val, index) => {
+            return (
+              <Cards item xs={2.8} px={7}>
+                <Stack spacing={2} mt={3} mb={1}>
+                  <Typography variant="h4" textAlign="center">
+                    {val.title}
+                  </Typography>
+                  <Typography variant="h6" textAlign="center">
+                    {val.subtitle}
+                  </Typography>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      // alignItems: "end",
+                    }}
+                  >
+                    <Typography variant="h3" px={2}>
+                      ${val.price}
+                    </Typography>
+                    <Typography py={3}>/month</Typography>
+                  </div>
+                </Stack>
+                <Stack spacing={2} mb={3}>
+                  {val.items.map((item) => {
+                    return (
+                      <Service>
+                        <CheckIcon style={{ color: "#5FB539" }} />
+                        <Typography px={2}>{item}</Typography>
+                      </Service>
+                    );
+                  })}
+                </Stack>
+                <Stack mb={3}>
+                  <Button variant="contained" styled={{ borderRadius: "50px" }}>
+                    Get started
+                  </Button>
+                </Stack>
+              </Cards>
+            );
+          })}
+        </Row>
       </Grid>
-      <MyGrid
-        container
-        gap={{ lg: 2, md: 2, sm: 2 }}
-        columns={{ xs: 2, sm: 4, md: 7, lg: 15 }}
-      >
-        <Grid></Grid>
-        <CardGrid
-          item
-          xs={2}
-          sx={{ backgroundColor: "#eeeeee", flexDirection: "column" }}
-          sm={3}
-          md={3}
-          lg={4}
-        >
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={1}>
-            <Head variant="h4" sx={{ fontWeight: "bold" }}>
-              Simple
-            </Head>
-            <Typography>For Small Businesses</Typography>
-            <Typography sx={{ display: "flex", alignItems: "end" }}>
-              <Typography
-                variant="h3"
-                sx={{ fontWeight: "bold", paddingRight: "8px" }}
-              >
-                $30{" "}
-              </Typography>
-              /month
-            </Typography>
-          </Stack>
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={2}>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Individual configuration
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              No setup, or hidden fees
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Team size: 1 developer
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Premium support: 6 months
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Free updates: 6 months
-            </Typography>
-          </Stack>
-
-          <Button
-            variant="contained"
-            sx={{
-              borderRadius: "10px",
-              backgroundColor: "#2F3C68",
-              px: "80px",
-            }}
-          >
-            Subscribe
-          </Button>
-        </CardGrid>
-        <CardGrid
-          item
-          xs={2}
-          sx={{
-            backgroundColor: "#2F3C68",
-            flexDirection: "column",
-            color: "white",
-          }}
-          sm={3}
-          md={3}
-          lg={4}
-        >
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={1}>
-            <Head variant="h4" sx={{ fontWeight: "bold" }}>
-              Premium
-            </Head>
-            <Typography>For Medium Businesses</Typography>
-            <Typography sx={{ display: "flex", alignItems: "end" }}>
-              <Typography
-                variant="h3"
-                sx={{ fontWeight: "bold", paddingRight: "8px" }}
-              >
-                $100{" "}
-              </Typography>
-              /month
-            </Typography>
-          </Stack>
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={2}>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Individual configuration
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              No setup, or hidden fees
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Team size: 10 developers
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Premium support: 24 months
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Free updates: 24 months
-            </Typography>
-          </Stack>
-
-          <Button
-            variant="contained"
-            sx={{
-              borderRadius: "10px",
-              backgroundColor: "#eeeeee",
-              color: "#2F3C68",
-              px: "80px",
-            }}
-          >
-            Subscribe
-          </Button>
-        </CardGrid>
-        <CardGrid
-          item
-          xs={2}
-          sx={{ backgroundColor: "#eeeeee", flexDirection: "column" }}
-          sm={3}
-          md={3}
-          lg={4}
-        >
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={1}>
-            <Head variant="h4" sx={{ fontWeight: "bold" }}>
-              Deluxe
-            </Head>
-            <Typography>For Enterprise Level Businesses</Typography>
-            <Typography sx={{ display: "flex", alignItems: "end" }}>
-              <Typography
-                variant="h3"
-                sx={{ fontWeight: "bold", paddingRight: "8px" }}
-              >
-                $200{" "}
-              </Typography>
-              /month
-            </Typography>
-          </Stack>
-          <Stack sx={{ alignSelf: "start" }} px={9} spacing={2}>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Individual configuration
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              No setup, or hidden fees
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Team size: 100+ developers
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Premium support: 36 months
-            </Typography>
-            <Typography sx={{ display: "flex", alignItems: "center" }}>
-              <CheckCircleIcon />
-              Free updates: 36 months
-            </Typography>
-          </Stack>
-
-          <Button
-            variant="contained"
-            sx={{
-              borderRadius: "10px",
-              backgroundColor: "#2F3C68",
-              px: "80px",
-            }}
-          >
-            Subscribe
-          </Button>
-        </CardGrid>
-        <Grid></Grid>
-      </MyGrid>
-    </>
+    </ParentGrid>
   );
-};
-
-export default Pricing;
-
-const MyGrid = styled(Grid)`
+}
+export default App;
+const Cards = styled(Grid)`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: .5s ease;
+  &:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
+    transform-origin: right top;
+    transform: perspective(1000px) rotateX(10deg);
+    rotateY(-10deg) rotateZ(2deg);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
+  transform-origin: center top;
+  transform: perspective(1000px) rotateX(10deg);
+  box-shadow: -15px 15px 50px rgba(0, 0, 0, .3);
+  transform-origin: left top;
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) rotateZ(-2deg);
+  box-shadow: 15px 5px 50px rgba(0, 0, 0, .3);
+  transform-origin: left center;
+  transform: perspective(1000px) rotateY(-10deg);
+  box-shadow: -15px 5px 50px rgba(0, 0, 0, .3);
+  transform-origin: right center;
+  transform: perspective(1000px) rotateY(10deg);
+  // box-shadow: 15px -15px 50px rgba(0, 0, 0, .3);
+  // transform-origin: right bottom;
+  // transform: perspective(1000px) rotateX(-10deg)
+  // rotateY(-10deg) rotateZ(-2deg);
+  // box-shadow: 0 -15px 50px rgba(0, 0, 0, .3);
+  // transform-origin: center bottom;
+  // transform: perspective(1000px) rotateX(-10deg);
+  // box-shadow: -15px -15px 50px rgba(0, 0, 0, .3);
+  // transform-origin: left bottom;
+  // transform: perspective(1000px) rotateX(-10deg) rotateY(10deg) rotateZ(2deg);
+  }
+`;
+const Row = styled(Grid)`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-
-const CardGrid = styled(Grid)`
-  height: 35rem;
-  border-radius: 20px;
+const Service = styled.div`
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  border: 1px solid black;
 `;
 
-const Head = styled(Typography)``;
+const ParentGrid = styled(Grid)`
+  // border: 1px solid;
+  // border-radius: 10px;
+  // box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+`;

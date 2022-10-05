@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-
 import "./styles/App.css";
 import { data } from "./utils/pathLocations";
 

@@ -6,7 +6,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_1.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "auto" }}
       />
     ),
     description:
@@ -17,7 +17,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_2.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "auto", maxWidth: "100%" }}
       />
     ),
     description:
@@ -28,7 +28,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_3.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "auto", maxWidth: "100%" }}
       />
     ),
     description:
@@ -39,7 +39,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_4.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "auto", maxWidth: "100%" }}
       />
     ),
     description:
@@ -50,7 +50,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_5.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "auto", maxWidth: "100%" }}
       />
     ),
     description:
@@ -61,7 +61,7 @@ export const choose = [
     image: (
       <img
         src={require("./choose_6.png")}
-        style={{ objectFit: "cover", height: "300px" }}
+        style={{ objectFit: "cover", height: "300px", maxWidth: "100%" }}
       />
     ),
     description:
