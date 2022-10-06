@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import styled from "styled-components";
-import headImg from "../assets/header-background-card.png";
+import headImg from "../assets/bg-head.png";
 import Typewriter from "typewriter-effect";
 import Navigation from "./Navigation";
 import "@fontsource/roboto/500.css";
@@ -50,8 +50,9 @@ const Main = styled.div`
 const HeaderText = styled(Typography)`
   color: white;
   &::after {
-    border-bottom: 10px solid;
-    border-radius: 20px;
+    border-bottom: 5px solid;
+    // border-width: 2px 10px;
+    border-radius: 10px;
     content: "";
     display: block;
     width: 0;
@@ -62,7 +63,8 @@ const HeaderText = styled(Typography)`
   }
   ,
   &:hover:after {
-    width: 100%;
+    display: block;
+    width: 50%;
   }
 `;
 
