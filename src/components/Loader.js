@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bars } from "react-loader-spinner";
+import { Bars, Dna } from "react-loader-spinner";
 import styled from "styled-components";
 import Home from "../pages/Home";
 
@@ -17,14 +17,13 @@ const Loader = () => {
     <>
       {!done ? (
         <Parent style={{ margin: "0px", padding: "0px" }}>
-          <Bars
+          <Dna
+            visible={true}
             height="80"
             width="80"
-            color="#4fa94d"
-            ariaLabel="bars-loading"
+            ariaLabel="dna-loading"
             wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
+            wrapperClass="dna-wrapper"
           />
         </Parent>
       ) : (
@@ -37,9 +36,9 @@ const Loader = () => {
 export default Loader;
 
 const Parent = styled.div`
-//   margin: 0px !important;
-//   padding: 0px !important;
-//   box-sizing: border-box !important;
+  //   margin: 0px !important;
+  //   padding: 0px !important;
+  //   box-sizing: border-box !important;
   background-color: black;
   display: flex;
   height: 100vh;

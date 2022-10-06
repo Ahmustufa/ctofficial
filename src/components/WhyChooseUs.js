@@ -97,7 +97,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${bgImg});
+  // background-image: url(${bgImg});
 
   width: auto;
 `;

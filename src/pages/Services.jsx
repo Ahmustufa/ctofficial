@@ -4,11 +4,16 @@ import React from "react";
 import styled from "styled-components";
 import Pricing from "../components/Pricing";
 import WhyChooseUs from "../components/WhyChooseUs";
+import bgImg2 from "../assets/body-background.png";
 const Services = () => {
   return (
-    <Wrap>
-      <Stack my={12}>
-        <Title variant="h2" textAlign="center" style={{ fontWeight: "bold" }}>
+    <Wrap style={{ color: "white", overflowX: "hidden" }} id="services" >
+      <Stack mb={12} pt={5}>
+        <Title
+          variant="h2"
+          textAlign="center"
+          style={{ color: "white", fontWeight: "bold" }}
+        >
           Services
         </Title>
       </Stack>
@@ -57,4 +62,7 @@ const Title = styled(Typography)`
 const Wrap = styled.div`
   padding-bottom: 2rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  background-image: url(${bgImg2});
+  background-position: center;
+  background-size: cover;
 `;
